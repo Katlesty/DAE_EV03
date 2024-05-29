@@ -113,7 +113,7 @@ class PrestamoView(APIView):
 class PrestamoDetalle(APIView):
     def get(self, request, prestamo_id):
         prestamo = Prestamos.objects.get(idPrestamo=prestamo_id)
-        serPrestamos = PrestamoSerializer(prestamo)
+        serPrestamos = PrestamosSerializer(prestamo)
         return Response(serPrestamos.data)
     
     def put(self, request, prestamo_id):
